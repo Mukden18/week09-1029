@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue2_01.js"></script>
+    <style>
+        #male{
+            background-color: aqua;
+
+        }
+        #female{
+            background-color: deeppink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1></h1>
+        <p>{{sayHello()}}</p>
+        <ul v-bind:id="sex">
+            <li>name:{{name}}</li>
+            <li>city:{{city}}</li>
+        </ul>
+        <script>
+            let user = {
+                name: 'wangtianle',
+                city: 'beijing',
+                sex:'male'
+            };
+            let vm = new Vue({ //VM model桥梁
+                el :'#app',
+                data:user,
+                methods:{
+                    sayHello(){
+                        return'Hi,welcome to form <b>wangtianle</b>!';
+                        // return`Hello,welcometo${this.city}`}}
+                    }   });
+                    console.log(vm.$data)
+        </script>
+    </div>
+</body>
+
+</html>
